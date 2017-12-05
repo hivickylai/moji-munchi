@@ -4,4 +4,4 @@
 
 ## Screenshot
 
-![Coming Soon to a README near you.](/1000.png)
+![Coming Soon to a README near you.](static/screenshot.png)

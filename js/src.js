@@ -18,8 +18,8 @@ const ingredient = {
     16: { code: '&#x1f32e', keyword: 'taco' },
     17: { code: '&#x1f32f', keyword: 'burrito' },
     18: { code: '&#x1f959', keyword: 'pita' },
-    19: { code: '&#x1f95a', keyword: 'egg' },
-    20: { code: '&#x1f373', keyword: 'fried egg' },
+    19: { code: '&#x1f95a', keyword: 'eggs' },
+    20: { code: '&#x1f373', keyword: 'fried eggs' },
     21: { code: '&#x1f958', keyword: 'paella' },
     22: { code: '&#x1f372', keyword: 'hotpot' },
     23: { code: '&#x1f963', keyword: 'soup' },
@@ -54,7 +54,7 @@ const pairing = {
 const dessert = {
     name: 'dessert',
     1: { code: '&#x1f366', keyword: 'soft ice cream' },
-    2: { code: '&#x1f367', keyword: 'snow cone' },
+    2: { code: '&#x1f367', keyword: 'shaved ice' },
     3: { code: '&#x1f368', keyword: 'ice cream' },
     4: { code: '&#x1f369', keyword: 'donut' },
     5: { code: '&#x1f36a', keyword: 'cookie' },
@@ -72,7 +72,6 @@ const sleep = (ms) => {
 }
 
 const generate = (type) => {
-    //console.log('generating ' + type.name);
     let list = document.getElementById(type.name);
     // Handle object length conundrum
     let num = Math.ceil(Math.random() * Object.keys(type).length - 1);
@@ -84,15 +83,13 @@ const generate = (type) => {
     emoji.innerHTML = type[num]['code'];
     emoji.setAttribute('keyword', type[num]['keyword']);
     list.appendChild(emoji);
-
-    //console.log(type.name, num, type[num]['keyword']);
 }
 
 function findMe(keyword) {
     console.log('finding you...');
     var searchTerm = keyword;
     if (!navigator.geolocation) {
-        output.innerHTML = "(geolocation is not supported by your browser)";
+        $('#golocate').html('Sorry, geolocation is not supported by your browser.');
         return;
     }
     function success(position) {
@@ -145,7 +142,8 @@ function findMe(keyword) {
     }
 
     function error(error) {
-        console.log(error)
+        console.log(error);
+        $('#golocate').html('Sorry, couldn\'t get your location.');
     }
     navigator.geolocation.getCurrentPosition(success, error);
 }
@@ -162,12 +160,10 @@ $(document).ready(() => {
         }
         $('.number').removeClass('selected');
         $(this).addClass('selected');
-        console.log(this);
         return times;
     })
 
     $('#go').click(function (event) {
-        console.log('Ok, go!');
         $('.ask').slideUp(500);
         [...Array(times)].forEach((_, i) => {
             generate(ingredient);
@@ -178,7 +174,6 @@ $(document).ready(() => {
     });
 
     $('.result').on('click', '.search', function (event) {
-        //console.log('click!');
         let keyword = $(this).attr('keyword');
         $('#map').slideDown(500);
         findMe(keyword);
