@@ -24,7 +24,17 @@ const ingredient = {
     22: { code: '&#x1f372', keyword: 'hotpot' },
     23: { code: '&#x1f963', keyword: 'soup' },
     24: { code: '&#x1f957', keyword: 'salad' },
-    25: { code: '&#x1f37f', keyword: 'popcorn' }
+    25: { code: '&#x1f37f', keyword: 'popcorn' },
+    26: {code:'&#x1f371', keyword: 'bento'},
+    27: {code:'&#x1f359', keyword: 'onigiri'},
+    28: {code:'&#x1f35a', keyword: 'rice'},
+    29: {code:'&#x1f35b', keyword: 'curry rice'},
+    30: {code:'&#x1f35c', keyword: 'noodles'},
+    31: {code:'&#x1f35d', keyword: 'pasta'},
+    32: {code:'&#x1f363', keyword: 'sushi'},
+    33: {code:'&#x1f364', keyword: 'tempura'},
+    34: {code:'&#x1f95f', keyword: 'dumplings'},
+    35: {code:'&#x1f961', keyword: 'chinese takeout'}
 }
 
 const method = {
@@ -64,7 +74,8 @@ const dessert = {
     9: { code: '&#x1f36b', keyword: 'chocolate' },
     10: { code: '&#x1f36c', keyword: 'candy' },
     11: { code: '&#x1f36d', keyword: 'lollipop' },
-    12: { code: '&#x1f36e', keyword: 'custard' }
+    12: { code: '&#x1f36e', keyword: 'custard' },
+    13: {code: '&#x1f960', keyword: 'fortune cookie'}
 }
 
 const sleep = (ms) => {
