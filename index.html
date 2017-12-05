@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Random emojis help you decide what to eat and find it nearby." />
+
+    <title>Moji-Munchi</title>
+
+    <!-- google fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <!-- icon -->
+    <link id="favicon" rel="shortcut icon" href="/img/">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="js/src.js"></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2JTR8q-wlnmyOwoRvNBbaZYr14R6tljo&libraries=places">
+    </script>
+
+
+</head>
+
+<body>
+    <div class="ask" id="top">
+        <h1>
+            What to eat?
+        </h1>
+        <hr />
+        <div class="settings">
+            <h2>How hungry are you?</h2>
+            <div class="hungers">
+            <button class="emoji number meh" value="1">&#x1f610</button>
+            <button class="emoji number kinda" value="2">&#x1f623</button>
+            <button class="emoji number very" value="3">&#x1f62b</button>
+            <button class="emoji number hangry" value="4">&#x1f92c</button>
+            </div>
+        </div>
+        <div class="ready">
+            <button id="go">Feed me plz</button>
+        </div>
+    </div>
+    <div class="answer">
+        <div class="eatthis">
+            <h2>Eat this:</h2>
+            <div class="result" id="ingredient"></div>
+            <p>Click to find it near you!</p>
+        </div>
+        <div class="eatwith">
+            <div>
+                <h3>With this:</h3>
+                <div class="result" id="method"></div>
+            </div>
+            <div>
+                <h3>Drink pairing:</h3>
+                <div class="result" id="pairing"></div>
+            </div>
+            <div>
+                <h3>Dessert:</h3>
+                <div class="result" id="dessert"></div>
+            </div>
+        </div>
+        <div id="map"></div>
+        <div class="reset">
+            <a href="/">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVEhLtdbPK2VhHMfxazA2fsVOiY0UEQsWsxCmmUaikL1EUXaUvZ2FmWKBlb/AimaaacqUBUnyYyMr8nNjoWzk5/tz9XS/zjm3e84d91Ovuuf0nOd7n3vO+T43FjG1mEVh/CiDqcMzztCnE++ZD/iGaaxDhZwVVOC/koUBnMBO7nWLCegLRU4x/iBoYq9z9CNySrGHoEmvzedHzKEILh8RqqiW/wt2ck24gGq4h2EXTbApwF88IWWxYdgiN2iDSxXGkRM/SiQf23DXaeV2pW+iZdsb/4DPCJsluGtlCoH5CjtwEVGiFdh7qC8dmB+whWoQNd9h51An8eU33AC9+emkE7ZQL3zZgRuwqRNppBG20Bh82YAbsK8TaaQZttAgfFmGG6C2koeoGYIt1AFf1K/soB5EzU+46/V6lMAXvfm2kNpQNsKmBeoK7vp/SJpV2GIzCIrajY22imPYa7uQNPW4gwZeoAE2uZiEOrtLO05hi6whZUZwiMr4USKfoKdREx1gFGqitoBcoQyhoibpor1pHuri3km99KKrw0eOWsglgib10vZSjrSjm5psO9cqVaAb7xL9lHoC76ECR2iFftaMRL1sC/o3lPFou//y+jFsYrEXv3u+PgWqbfsAAAAASUVORK5CYII="
+                    id="reset">
+            </a>
+        </div>
+    </div>
+</body>

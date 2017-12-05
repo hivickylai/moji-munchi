@@ -1,0 +1,154 @@
+@import "vars"
+@import "mixins"
+
+*
+    margin: 0
+    padding: 0
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
+html
+    background-color: $white
+
+body
+    font-size: $body-size
+    font-family: $font
+    font-weight: 300
+    color: $body-text
+
+a
+    color: $links
+    +ease(1s)
+    &:hover
+        color: $links-hover
+        font-style: none
+    &:active
+        color: $links
+
+hr
+    width: 30%
+    background-color: transparent
+    border-bottom: 2px solid $black
+    margin-bottom: 2rem
+
+h1
+    font-size: 3rem
+    font-weight: 300
+    margin-bottom: 1rem
+
+button
+    cursor: pointer
+
+.wrapper
+    margin: 1rem auto
+
+.strong
+    font-weight: 400
+    font-family: $font
+
+.top-pad
+    padding-top: 1rem
+
+.bottom-pad
+    padding-bottom: 1rem
+
+.no-padding
+    padding: 0
+
+.hidden
+    display: none
+
+.emoji
+    font-size: 3rem
+    margin: 0 1rem
+    cursor: pointer
+
+.ask
+    padding: 3rem
+    @media screen and (max-width: 320px)
+        padding: 1rem
+    z-index: 2
+    background-color: $white
+    min-height: 100vh
+
+.settings
+    margin: 2rem auto
+
+.hungers
+    display: flex
+    flex-direction: row
+    align-items: flex-start
+
+#go
+    width: auto
+    height: 3rem
+    font-size: 1.5rem
+    padding-left: 1rem
+    padding-right: 1rem
+    border-radius: 5px
+    border: 2px solid $black
+    background-color: $gold
+
+.number
+    margin: 10px 20px 10px 0px
+    width: 80px
+    height: 80px
+    border-radius: 5px
+    border: 2px solid $black
+    +ease(100ms)
+    &.meh
+        background-color: $yellow
+        &.selected
+            background-color: darken($yellow, 20%)
+    &.kinda
+        background-color: $orange
+        &.selected
+            background-color: darken($orange, 20%)
+    &.very
+        background-color: $red
+        &.selected
+            background-color: darken($red, 20%)
+    &.hangry
+        background-color: $alarm
+        &.selected
+            background-color: darken($alarm, 20%)
+
+.selected
+    border: 4px solid $black
+
+.answer
+    position: absolute
+    top: 0
+    width: 100%
+    z-index: -1
+    text-align: center
+    padding: 3rem 1rem
+
+.eatthis
+    h2
+        font-size: 2rem
+
+.eatwith
+    margin: 2rem auto
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: flex-end
+    h3
+        font-size: 1.5rem
+
+.result
+    margin: 1rem auto
+
+#map
+    height: 500px
+    width: 90%
+    display: none
+    margin: 1rem auto
+
+.placename
+    font-weight: 400
+
+.opennow
+    color: green
